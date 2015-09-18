@@ -1,0 +1,24 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">心电图大屏设置</h1>
+    <button class="button button-clear button-primary" ng-click="configmodal.hide()">取消</button>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input" style="display: none;">
+        <span class="input-label">诊区id号</span>
+        <input ng-model="configdata.areanum" type="text" value="001">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">serverurl</span>
+        <input ng-model="configdata.serverurl" type="text">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">大屏标题</span>
+        <input ng-model="configdata.areaname" type="text">
+      </label>
+
+      <button class="button button-full button-positive" ng-click="makeConfig(configdata)">完成</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

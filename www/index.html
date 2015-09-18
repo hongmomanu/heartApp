@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <script type="application/javascript" src="js/jquery.min.js"></script>
+    <title></title>
+
+
+
+
+
+    <script type="text/javascript">
+
+
+
+
+        //$.get()
+
+        function load(){
+            if(!localStorage.serverurl)localStorage.serverurl="http://199.199.4.21:3000/";
+
+            $.ajax({
+                url: localStorage.serverurl+"helloheart",
+                success: function(data){
+                    window.location='./main.html';
+                },
+                error:function(data){
+                    var theResponse = window.prompt("服务地址",localStorage.serverurl);
+                    if(theResponse)localStorage.serverurl=theResponse;
+                    else  localStorage.serverurl="http://199.199.4.21:3000/";
+                    window.location.href="";
+                },
+                timeout: 3000 //in milliseconds
+            });
+
+        }
+
+
+
+    </script>
+
+
+
+
+</head>
+
+
+<body onload="load()">
+
+</body>
+</html>
