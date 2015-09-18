@@ -83,6 +83,10 @@ angular.module('app.controllers')
             }
             else if(res.type=='fireprop'){
               localStorage[res.name]=res.value;
+              if(res.name=='tip'){
+                $scope.maketip();
+              }
+
             }
           },0);
 

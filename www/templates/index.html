@@ -9,75 +9,85 @@
 <ion-content>
 
 
-  <div class="row">
-    <div class="col  mygrid">
-      <button class="button myButton">&nbsp;心电第1诊室&nbsp;</button>
+  <div class="row row100">
 
-      <div class="scrolldiv">
-        <ion-scroll zooming="true" class="ion-list-viewport">
-          <ion-list>
-            <ion-item ng-repeat="item in data1.data" ng-class="'listitem'">
-              {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
-            </ion-item>
-          </ion-list>
+    <div class="col  mygrid col66 ">
 
-        </ion-scroll>
+      <div class="row row50">
+        <div class="col  mygrid">
+          <button class="button myButton">&nbsp;心电第1诊室&nbsp;</button>
+
+          <div >
+            <ion-scroll zooming="true" class="ion-list-viewport">
+              <ion-list>
+                <ion-item ng-repeat="item in data1.data" ng-class="'listitem'">
+                  {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
+                </ion-item>
+              </ion-list>
+
+            </ion-scroll>
+          </div>
+
+
+        </div>
+        <div class="col  mygrid">
+          <button class="button myButton">&nbsp;心电第2诊室&nbsp;</button>
+          <div >
+            <ion-scroll class="ion-list-viewport">
+              <ion-list>
+                <ion-item ng-repeat="item in data2.data" ng-class="'listitem'">
+                  {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
+                </ion-item>
+              </ion-list>
+
+            </ion-scroll>
+
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row row50">
+        <div class="col  mygrid">
+          <button class="button myButton">&nbsp;心电第3诊室&nbsp;</button>
+          <div >
+            <ion-scroll class="ion-list-viewport">
+              <ion-list>
+                <ion-item ng-repeat="item in data3.data" ng-class="'listitem'">
+                  {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
+                </ion-item>
+              </ion-list>
+
+            </ion-scroll>
+
+          </div>
+
+        </div>
+        <div class="col  mygrid">
+          <button class="button myButton">&nbsp;心电第4诊室&nbsp;</button>
+          <div  >
+            <ion-scroll class="ion-list-viewport">
+              <ion-list>
+                <ion-item ng-repeat="item in data4.data" ng-class="'listitem'">
+                  {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
+                </ion-item>
+              </ion-list>
+
+            </ion-scroll>
+
+          </div>
+
+        </div>
+
       </div>
 
 
     </div>
     <div class="col  mygrid">
-      <button class="button myButton">&nbsp;心电第2诊室&nbsp;</button>
-      <div class="scrolldiv">
-        <ion-scroll class="ion-list-viewport">
-          <ion-list>
-            <ion-item ng-repeat="item in data2.data" ng-class="'listitem'">
-              {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
-            </ion-item>
-          </ion-list>
 
-        </ion-scroll>
-
-      </div>
     </div>
-
 
   </div>
-  <div class="row">
-    <div class="col  mygrid">
-      <button class="button myButton">&nbsp;心电第3诊室&nbsp;</button>
-      <div >
-        <ion-scroll class="ion-list-viewport">
-          <ion-list>
-            <ion-item ng-repeat="item in data3.data" ng-class="'listitem'">
-              {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
-            </ion-item>
-          </ion-list>
-
-        </ion-scroll>
-
-      </div>
-
-    </div>
-    <div class="col  mygrid">
-      <button class="button myButton">&nbsp;心电第4诊室&nbsp;</button>
-      <div >
-        <ion-scroll class="ion-list-viewport">
-          <ion-list>
-            <ion-item ng-repeat="item in data4.data" ng-class="'listitem'">
-              {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
-            </ion-item>
-          </ion-list>
-
-        </ion-scroll>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
 
 
 
