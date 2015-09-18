@@ -18,7 +18,6 @@ angular.module('starter', ['ionic',  'app.controllers' ])
     });
   }).config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-
       .state('index', {
         url: '/index',
         //abstract: true,

@@ -24,6 +24,7 @@ angular.module('app.controllers')
       var websocketInit=function(){
         //if(!$scope.configdata.serverurl)$scope.configdata.serverurl=localStorage.serverurl;
         $scope.configdata.serverurl=localStorage.serverurl;
+
         var url=$scope.configdata.serverurl;
         var areanum=$scope.configdata.areanum;
         if(!url||url==""){

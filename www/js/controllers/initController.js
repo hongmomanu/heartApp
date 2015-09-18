@@ -7,6 +7,7 @@ angular.module('app.controllers')
   .controller('initController', function ($scope,$state, $interval, $timeout, $ionicModal, $rootScope, $ionicLoading) {
     if (!localStorage.totaltimes)localStorage.totaltimes = 1;
     if (!localStorage.showlines)localStorage.showlines = 10;
+    if (!localStorage.tip)localStorage.tip = "温馨提示：常规过号人员自动退后5位，其他项目自动退后3位!";
     $scope.socket = null;
     $scope.speaktimes = 0;
     $scope.playlist = [];
@@ -14,7 +15,28 @@ angular.module('app.controllers')
     $scope.isplaying = false;
     $scope.callingindex = 0;
 
-    $scope.configdata = localStorage.configdata ? JSON.parse(localStorage.configdata) : {};
+
+
+    $timeout(function(){
+
+      $("#marquee").marquee({
+        //speed in milliseconds of the marquee
+        duration: 35000,
+        //gap in pixels between the tickers
+        gap: 50,
+        //time in milliseconds before the marquee will start animating
+        delayBeforeStart: 1000,
+        pauseOnCycle:1000,
+        //'left' or 'right'
+        direction: 'left',
+        //true or false - should the marquee be duplicated to show an effect of continues flow
+        duplicated: true
+      });
+    },1000);
+
+    $scope.tip=localStorage.tip;
+    $scope.configdata = localStorage.configdata ? JSON.parse(localStorage.configdata) : {areaname:'心电图排队叫号',areanum:'heartbig'};
+
 
     console.log('initController');
 
