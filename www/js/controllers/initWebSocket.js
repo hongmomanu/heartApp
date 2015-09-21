@@ -63,7 +63,8 @@ angular.module('app.controllers')
 
 
             }else if(res.type=="callpatient"){
-              $state.go('index');
+              //$state.go('index');
+
               $scope.makeSpeak(res.data);
 
             }else if(res.type=="changeroom"){

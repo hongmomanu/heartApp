@@ -17,7 +17,7 @@
           <div>
             <ion-scroll zooming="true" class="ion-list-viewport">
               <ion-list>
-                <ion-item ng-repeat="item in data1.data" ng-class="'listitem'">
+                <ion-item ng-repeat="item in data1" ng-class="'listitem'">
                   {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
                 </ion-item>
               </ion-list>
@@ -35,7 +35,7 @@
           <div >
             <ion-scroll class="ion-list-viewport">
               <ion-list>
-                <ion-item ng-repeat="item in data2.data" ng-class="'listitem'">
+                <ion-item ng-repeat="item in data2" ng-class="'listitem'">
                   {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
                 </ion-item>
               </ion-list>
@@ -52,7 +52,7 @@
           <div >
             <ion-scroll class="ion-list-viewport">
               <ion-list>
-                <ion-item ng-repeat="item in data0.data" ng-class="'listitem columnlist3'">
+                <ion-item ng-repeat="item in data0" ng-class="'listitem columnlist3'">
                   {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}}<br> {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
                 </ion-item>
               </ion-list>
@@ -75,7 +75,7 @@
             <div>
               <ion-scroll zooming="true" class="ion-list-viewport">
                 <ion-list>
-                  <ion-item ng-repeat="item in data3.data" ng-class="'listitem'">
+                  <ion-item ng-repeat="item in data3" ng-class="'listitem'">
                     {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
                   </ion-item>
                 </ion-list>
@@ -96,7 +96,7 @@
           <div >
             <ion-scroll class="ion-list-viewport">
               <ion-list>
-                <ion-item ng-repeat="item in data4.data" ng-class="'listitem'">
+                <ion-item ng-repeat="item in data4" ng-class="'listitem'">
                   {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
                 </ion-item>
               </ion-list>

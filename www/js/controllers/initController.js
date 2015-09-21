@@ -61,7 +61,7 @@ angular.module('app.controllers')
     };
 
 
-    $scope["data0"]={data:[{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"}]};
+    $scope["data0"]=[{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"}];
 
 
 
@@ -132,7 +132,7 @@ angular.module('app.controllers')
 
         var item = $scope.playlist[$scope.callingindex];
         //var text="请 "+item.showno+item.patname+" 到"+item.roomname+"机房门口等候检查";
-        var text = ["请 " + item.hzxh, item.hzxm, " 到" + item.zsmc + "准备就诊"];
+        var text = ["请 " + item.lineno, item.name, " 到第" + item.room+"诊室" + "准备检查"];
         //console.log(text);
 
         $scope.showcallmsg(item);
