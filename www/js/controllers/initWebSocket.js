@@ -65,14 +65,16 @@ angular.module('app.controllers')
             }else if(res.type=="callpatient"){
               //$state.go('index');
               if(res.status==0){
-                $scope.callPatient(res.data);
-                $scope.removePassedPatient(res.data);
-                $scope.makeSpeak(res.data);
+                $scope.callPatient(res);
+                $scope.removePassedPatient(res);
+                $scope.makeSpeak(res);
+              }else if(res.status==1){
+                $scope.removePatient(res);
               }else if(res.status==2){
-                $scope.removePatient(res.data);
+                $scope.removePatient(res);
               }else if(res.status==3){
-                $scope.removePatient(res.data);
-                $scope.addPassedPatient(res.data);
+                $scope.removePatient(res);
+                $scope.addPassedPatient(res);
 
               }
 

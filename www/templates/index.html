@@ -8,10 +8,10 @@
 
 <ion-content>
 
-  <table height="100%" style="padding: 0px" width="100%">
-    <tr>
-      <td width="33%">
-        <div class="row"><div class="col  mygrid">
+  <table id="tablemain" height="100%" border="1"   style="padding: 0px;overflow: hidden; background-color: lightskyblue;" width="100%">
+    <tr style="height: 50%;" >
+      <td width="33%"   style="overflow: hidden;border-left: darkgrey solid 1px;border-right: darkgrey solid 1px;">
+         <div class="mygrid">
           <button class="button myButton">&nbsp;心电第1诊室&nbsp;</button>
 
           <div>
@@ -26,11 +26,11 @@
           </div>
 
 
-        </div></div>
+        </div>
 
       </td>
-      <td width="33%">
-        <div class="row"><div class="col  mygrid">
+      <td width="33%"   style="overflow: hidden;border-left: darkgrey solid 1px;border-right: darkgrey solid 1px;">
+        <div class="mygrid">
           <button class="button myButton">&nbsp;心电第2诊室&nbsp;</button>
           <div >
             <ion-scroll class="ion-list-viewport">
@@ -43,36 +43,39 @@
             </ion-scroll>
 
           </div>
-        </div></div>
+        </div>
 
       </td>
-      <td width="33%" rowspan="2">
-        <div class="row"><div class="col  mygrid" style="text-align: left;background-color: #759E60;">
+      <td width="33%"  rowspan="2" style="padding-left:2px;background-color: #759E60;border-left:darkgrey solid 1px;border-right: darkgrey solid 1px;" >
+         <div class="mygrid" style="text-align: left;background-color: #759E60;">
           <button class="button myButton">&nbsp;过号人员&nbsp;</button>
-          <div >
+          <div id="passeddiv" class="scrolldiv">
             <ion-scroll class="ion-list-viewport">
               <ion-list>
-                <ion-item ng-repeat="item in data0" ng-class="'listitem columnlist3'">
-                  {{item.lineno.length==1?"&nbsp;&nbsp;":""}}{{item.lineno}}<br> {{item.name}} {{item.name.length==2?"&nbsp;&nbsp;":""}}
-                </ion-item>
+
+                  <ion-item ng-repeat="item in data0" ng-class="'listitem columnlist3'">
+                    {{item.lineno.length==1?"&nbsp;&nbsp;":""}}{{item.lineno}}<br> {{item.name}} {{item.name.length==2?"&nbsp;&nbsp;":""}}
+                  </ion-item>
+
+
               </ion-list>
 
             </ion-scroll>
 
           </div>
-        </div></div>
+        </div>
 
       </td>
     </tr>
-    <tr>
+    <tr style="height: 50%"  >
 
-      <td width="33%">
+      <td width="33%"      style="overflow: hidden;border-left:darkgrey solid 1px;border-right: darkgrey solid 1px;">
 
-        <div class="row">
-          <div class="col  mygrid">
+
+          <div class="mygrid">
             <button class="button myButton">&nbsp;心电第3诊室&nbsp;</button>
 
-            <div>
+            <div >
               <ion-scroll zooming="true" class="ion-list-viewport">
                 <ion-list>
                   <ion-item ng-repeat="item in data3" ng-class="'listitem'">
@@ -85,13 +88,13 @@
 
 
           </div>
-        </div>
+
 
 
       </td>
-      <td width="33%">
+      <td width="33%"     style="overflow: hidden;border-left: darkgrey solid 1px;border-right: darkgrey solid 1px;">
 
-        <div class="row"> <div class="col  mygrid">
+         <div class=" mygrid">
           <button class="button myButton">&nbsp;心电第4诊室&nbsp;</button>
           <div >
             <ion-scroll class="ion-list-viewport">
@@ -104,7 +107,7 @@
             </ion-scroll>
 
           </div>
-        </div></div>
+        </div>
 
       </td>
     </tr>

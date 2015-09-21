@@ -14,6 +14,16 @@ angular.module('app.controllers')
     $scope.isplay=true;
     $scope.isplaying = false;
     $scope.callingindex = 0;
+    $scope.data0=[];
+    $scope.data1=[];
+    $scope.data2=[];
+    $scope.data3=[];
+    $scope.data4=[];
+
+
+    $timeout(function(){
+      $('#passeddiv').height($('tbody').height()-50);
+    },1000);
 
 
 
@@ -111,9 +121,9 @@ angular.module('app.controllers')
 
     $scope.showcallmsg = function (item) {
       $ionicLoading.show({
-        template: '<div id="showmsg" style="font-size: 10px; line-height: normal;text-align: left;">' + '<a style="font-weight: bold">序号:' + item.lineno + '</a>'
-        + '<br><a style="font-weight: bold">' + item.name + '</a>'
-        + '<br><a style="font-weight: bold">第' + item.zsmc + '诊室</a>'
+        template: '<div id="showmsg" style="font-size: 10px; line-height: normal;text-align: center;">'
+        + '<a style="font-weight: bold">' + item.name + '</a>'
+        + '<br><a style="font-weight: bold">第' + item.room + '诊室</a>'
         + '</div>',
         animation: 'fade-in',
         /*maxWidth: 200,*/
@@ -168,7 +178,10 @@ angular.module('app.controllers')
 
     $scope.callPatient = function (data) {
 
+      console.log($scope['data'+data.room].length);
+      console.log(localStorage.showlines);
       if($scope['data'+data.room].length==localStorage.showlines){
+        console.log(localStorage.showlines);
         $scope['data'+data.room]=$scope['data'+data.room].slice(1);
       }
       $scope['data'+data.room].push(data);
@@ -187,6 +200,12 @@ angular.module('app.controllers')
     };
     $scope.addPassedPatient=function(data) {
       $scope['data0'].push(data);
+
+      if($('#tablemain').height()<($('#passeddiv').find('.list').height()+50)){
+
+
+
+      }
     };
     $scope.removePassedPatient=function(data) {
 

@@ -7,10 +7,11 @@
 .myButton {
   background-color:#CCFFFF ;
   font-size: xx-large;
+
   font-weight: bold;
   color: darkslateblue;
   width: 100%;
-  height: 100%;
+
 }
 .myTitle{
   font-size: xx-large !important;
@@ -26,7 +27,6 @@
 .ion-list-viewport{
   max-height: 100%;
   overflow:hidden;
-
   border-bottom: solid 1px #ddd;
 
 }
@@ -36,10 +36,14 @@
 }
 .mygrid{
   background-color :lightskyblue;
+  text-align: center;
+
+ /* height: 100%;*/
+  overflow: hidden;
 
 }
 .scrolldiv{
-  /*height: 40%;*/
+ /* height: 300px;*/
 }
 .col{
   /*background-color:white !important;*/
@@ -55,6 +59,7 @@
   display: -ms-flexbox !important;
   display: -webkit-flex !important;
   display: flex !important;
+
   -webkit-box-direction: normal !important;
   -moz-box-direction: normal !important;
   -webkit-box-orient: vertical !important;
@@ -115,7 +120,7 @@
 }*/
 
 .columnlist3{
-  width: 33%;
+  width: 33.3%;
   text-align: center;
   line-height: normal;
   font-size: xx-large;
