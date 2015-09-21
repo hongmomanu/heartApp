@@ -46,7 +46,23 @@
         </div></div>
 
       </td>
-      <td width="33%" rowspan="2"></td>
+      <td width="33%" rowspan="2">
+        <div class="row"><div class="col  mygrid">
+          <button class="button myButton">&nbsp;过号人员&nbsp;</button>
+          <div >
+            <ion-scroll class="ion-list-viewport">
+              <ion-list>
+                <ion-item ng-repeat="item in data2.data" ng-class="'listitem'">
+                  {{item.hzxh.length==1?"&nbsp;&nbsp;":""}}{{item.hzxh}} {{item.hzxm}} {{item.hzxm.length==2?"&nbsp;&nbsp;":""}}
+                </ion-item>
+              </ion-list>
+
+            </ion-scroll>
+
+          </div>
+        </div></div>
+
+      </td>
     </tr>
     <tr>
 
