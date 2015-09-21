@@ -61,7 +61,7 @@ angular.module('app.controllers')
     };
 
 
-    $scope["data0"]=[{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"}];
+    $scope["data0"]=[{lineno:"A001",name:"jack"},{lineno:"A001",name:"jack"},{lineno:"A001",name:"jack"},{lineno:"A001",name:"jack"}];
 
 
 
@@ -111,8 +111,8 @@ angular.module('app.controllers')
 
     $scope.showcallmsg = function (item) {
       $ionicLoading.show({
-        template: '<div id="showmsg" style="font-size: 10px; line-height: normal;text-align: left;">' + '<a style="font-weight: bold">序号:' + item.hzxh + '</a>'
-        + '<br><a style="font-weight: bold">姓名:' + item.hzxm + '</a>'
+        template: '<div id="showmsg" style="font-size: 10px; line-height: normal;text-align: left;">' + '<a style="font-weight: bold">序号:' + item.lineno + '</a>'
+        + '<br><a style="font-weight: bold">姓名:' + item.name + '</a>'
         + '<br><a style="font-weight: bold">诊室:' + item.zsmc + '</a>'
         + '</div>',
         animation: 'fade-in',
