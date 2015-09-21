@@ -61,6 +61,8 @@ angular.module('app.controllers')
     };
 
 
+    $scope["data0"]={data:[{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"},{hzxh:"A001",hzxm:"jack"}]};
+
 
 
     $scope.playvoice = function (text) {

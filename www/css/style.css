@@ -44,7 +44,7 @@
 .col{
   /*background-color:white !important;*/
   border:thin solid #CCFFFF;
-  text-align:center !important;
+  text-align:center ;
 }
 
 .scroll{
@@ -114,4 +114,11 @@
   height: 100px !important;
 }*/
 
+.columnlist3{
+  width: 33%;
+  line-height: normal;
+  font-size: xx-large;
+
+  display: inline-block;
+}
 
