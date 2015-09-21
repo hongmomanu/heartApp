@@ -64,8 +64,18 @@ angular.module('app.controllers')
 
             }else if(res.type=="callpatient"){
               //$state.go('index');
+              if(res.status==0){
+                $scope.callPatient(res.data);
+                $scope.removePassedPatient(res.data);
+                $scope.makeSpeak(res.data);
+              }else if(res.status==2){
+                $scope.removePatient(res.data);
+              }else if(res.status==3){
+                $scope.removePatient(res.data);
+                $scope.addPassedPatient(res.data);
 
-              $scope.makeSpeak(res.data);
+              }
+
 
             }else if(res.type=="changeroom"){
               $scope.configdata.areanum=res.data.newno;

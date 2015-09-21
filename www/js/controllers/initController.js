@@ -6,7 +6,7 @@ var remoteloaded=true;
 angular.module('app.controllers')
   .controller('initController', function ($scope,$state, $interval, $timeout, $ionicModal, $rootScope, $ionicLoading) {
     if (!localStorage.totaltimes)localStorage.totaltimes = 1;
-    if (!localStorage.showlines)localStorage.showlines = 10;
+    if (!localStorage.showlines)localStorage.showlines = 4;
     if (!localStorage.tip)localStorage.tip = "温馨提示：常规过号人员自动退后5位，其他项目自动退后3位!";
     $scope.socket = null;
     $scope.speaktimes = 0;
@@ -112,8 +112,8 @@ angular.module('app.controllers')
     $scope.showcallmsg = function (item) {
       $ionicLoading.show({
         template: '<div id="showmsg" style="font-size: 10px; line-height: normal;text-align: left;">' + '<a style="font-weight: bold">序号:' + item.lineno + '</a>'
-        + '<br><a style="font-weight: bold">姓名:' + item.name + '</a>'
-        + '<br><a style="font-weight: bold">诊室:' + item.zsmc + '</a>'
+        + '<br><a style="font-weight: bold">' + item.name + '</a>'
+        + '<br><a style="font-weight: bold">第' + item.zsmc + '诊室</a>'
         + '</div>',
         animation: 'fade-in',
         /*maxWidth: 200,*/
@@ -165,6 +165,40 @@ angular.module('app.controllers')
       }
       //console.log(data);
     };
+
+    $scope.callPatient = function (data) {
+
+      if($scope['data'+data.room].length==localStorage.showlines){
+        $scope['data'+data.room]=$scope['data'+data.room].slice(1);
+      }
+      $scope['data'+data.room].push(data);
+      //console.log(data);
+    };
+    $scope.removePatient=function(data) {
+      for (var i = 0; i < $scope['data'+data.room].length; i++) {
+        if ($scope['data'+data.room][i].lineno == data.lineno) {
+
+          $timeout(function () {
+            $scope['data'+data.room].splice(i, 1);
+          }, 0);
+          break;
+        }
+      }
+    };
+    $scope.addPassedPatient=function(data) {
+      $scope['data0'].push(data);
+    };
+    $scope.removePassedPatient=function(data) {
+
+      for (var i = 0; i < $scope['data0'].length; i++) {
+        if ( $scope['data0'][i].lineno == data.lineno) {
+          $timeout(function () {
+            $scope['data0'].splice(i, 1);
+          }, 0);
+          break;
+        }
+      }
+    }
 
 
   });
