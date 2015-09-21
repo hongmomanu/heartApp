@@ -39,7 +39,7 @@
 
 }
 .scrolldiv{
-  height: 340px;
+  /*height: 40%;*/
 }
 .col{
   /*background-color:white !important;*/
@@ -70,34 +70,23 @@
   font-size: xx-large;
 }
 
-.row50{
-  -webkit-box-flex: 0 !important;
-  -moz-box-flex: 0 !important;
-  -webkit-flex: 0 1 50% !important;
-  -ms-flex: 0 1 50% !important;
-  flex: 0 1 50% !important;
-
-}
-.row100{
-
-
+.row{
   -webkit-box-flex: 0 !important;
   -moz-box-flex: 0 !important;
   -webkit-flex: 0 1 100% !important;
   -ms-flex: 0 1 100% !important;
   flex: 0 1 100% !important;
+  height: 100%;
+  padding: 0px;
+
+
+
+
 }
 
 
-.rowsmall{
-  -webkit-box-flex: 0 !important;
-  -moz-box-flex: 0 !important;
-  padding-left: 5px;
-  padding-rigth: 5px;
-  -webkit-flex: 0 1 10% !important;
-  -ms-flex: 0 1 10% !important;
-  flex: 0 1 10% !important;
-}
+
+
 
 
 
@@ -124,3 +113,5 @@
 /*.bar-footer {
   height: 100px !important;
 }*/
+
+
