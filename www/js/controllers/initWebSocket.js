@@ -83,8 +83,6 @@ angular.module('app.controllers')
               $scope.configdata.areanum=res.data.newno;
               $scope.configdata.areaname=res.data.newname;
               localStorage.configdata=JSON.stringify($scope.configdata);
-              //$state.go('index');
-              //window.location.reload();
               window.location.href=""
 
             }else if(res.type=='firetip'){
