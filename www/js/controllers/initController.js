@@ -22,7 +22,7 @@ angular.module('app.controllers')
 
 
     $timeout(function(){
-      $('#passeddiv').height($('tbody').height()-50);
+      $('#passeddiv').height($('tbody').height()-60);
     },1000);
 
 
@@ -71,7 +71,6 @@ angular.module('app.controllers')
     };
 
 
-    $scope["data0"]=[{lineno:"A001",name:"jack"},{lineno:"A001",name:"jack"},{lineno:"A001",name:"jack"},{lineno:"A001",name:"jack"}];
 
 
 
@@ -178,12 +177,11 @@ angular.module('app.controllers')
 
     $scope.callPatient = function (data) {
 
-      console.log($scope['data'+data.room].length);
-      console.log(localStorage.showlines);
+
       if($scope['data'+data.room].length==localStorage.showlines){
-        console.log(localStorage.showlines);
         $scope['data'+data.room]=$scope['data'+data.room].slice(1);
       }
+      //$scope['data'+data.room].splice(0, 0, data);
       $scope['data'+data.room].push(data);
       //console.log(data);
     };
@@ -191,9 +189,9 @@ angular.module('app.controllers')
       for (var i = 0; i < $scope['data'+data.room].length; i++) {
         if ($scope['data'+data.room][i].lineno == data.lineno) {
 
-          $timeout(function () {
+          //$timeout(function () {
             $scope['data'+data.room].splice(i, 1);
-          }, 0);
+          //}, 0);
           break;
         }
       }

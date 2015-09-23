@@ -6,16 +6,19 @@
 
 .myButton {
   background-color:#CCFFFF ;
-  font-size: xx-large;
+  font-size: 50px;
 
   font-weight: bold;
+  height: 60px;
   color: darkslateblue;
   width: 100%;
 
 }
 .myTitle{
-  font-size: xx-large !important;
+  font-size: 50px !important;
 }
+
+
 .myList{
   width: 100%;
   height: 100%;
@@ -72,7 +75,8 @@
 
 .listitem {
   background-color :lightskyblue;
-  font-size: xx-large;
+  line-height: normal;
+  font-size: 50px;
 }
 
 .row{
@@ -125,5 +129,19 @@
   line-height: normal;
   font-size: xx-large;
   display: inline-block;
+}
+
+.has-header {
+  top: 60px;
+
+}
+.bar {
+  height: 60px;
+
+}
+.bar-header .title {
+  /* margin-top: 10px;*/
+  height: 60px;
+  line-height: 60px;
 }
 
