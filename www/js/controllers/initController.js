@@ -203,14 +203,12 @@ angular.module('app.controllers')
 
       $timeout(function () {
         if($('#tablemain').height()<($('#passeddiv').find('.list').height()+50)){
-          console.log(11);
           var scrollelement=$('#passeddiv').find('ion-scroll');
           scrollelement.scrollTo('max', 500);
 
             if(!$scope.scrolltimer){
               $scope.scrolltimer = $interval(function () {
-                console.log(scrollelement.find('.list').height()+10);
-                console.log(scrollelement.height()+scrollelement.scrollTop());
+
                 if(scrollelement.find('.list').height()<=(scrollelement.height()+scrollelement.scrollTop()+10)){
                   scrollelement.scrollTo(0,500);
                 }else{
