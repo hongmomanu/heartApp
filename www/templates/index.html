@@ -94,7 +94,7 @@
       </td>
       <td width="33%"     style="overflow: hidden;border-left: darkgrey solid 1px;border-right: darkgrey solid 1px;">
 
-         <div class=" mygrid">
+         <div class="mygrid">
           <button class="button myButton">&nbsp;心电第4诊室&nbsp;</button>
           <div >
             <ion-scroll class="ion-list-viewport">
@@ -129,7 +129,10 @@
 <ion-footer-bar align-title="left" class="bar-stable bar bar-positive has-footer" >
 
 
-  <div id="marquee" class="ng-binding" style="line-height: 33px;">{{tip}}</div>
+  <!--<div id="marquee" class="ng-binding" style="line-height: 33px;">{{tip}}</div>-->
+
+  <div style="width: 100%;"><marquee width="100%" ng-bind-html="renderHtml(tip)"></marquee></div>
+
 
 </ion-footer-bar>
 

@@ -38,7 +38,7 @@ angular.module('app.controllers')
           return ;
         }
 
-        url=url.replace(/(:\d+)/g,":3001");
+        url=url.replace(/(:\d+)/g,":"+(eval(url.match(/(:\d+)/g)[0].slice(1))+1));
         url=url.replace("http","ws");
 
 

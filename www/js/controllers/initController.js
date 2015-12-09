@@ -4,7 +4,7 @@
 
 var remoteloaded=true;
 angular.module('app.controllers')
-  .controller('initController', function ($scope,$state, $interval, $timeout, $ionicModal, $rootScope, $ionicLoading) {
+  .controller('initController', function ($scope,$state,$sce, $interval, $timeout, $ionicModal, $rootScope, $ionicLoading) {
     if (!localStorage.totaltimes)localStorage.totaltimes = 1;
     if (!localStorage.showlines)localStorage.showlines = 4;
     if (!localStorage.tip)localStorage.tip = "温馨提示：常规过号人员自动退后5位，其他项目自动退后3位!";
@@ -26,9 +26,15 @@ angular.module('app.controllers')
     },1000);
 
 
+    $scope.renderHtml = function (htmlCode) {
+      return $sce.trustAsHtml(htmlCode);
+    };
+
+
 
     $scope.maketip=function(){
 
+      /**
         $("#marquee").html(localStorage.tip);
         $("#marquee").marquee({
           //speed in milliseconds of the marquee
@@ -42,7 +48,9 @@ angular.module('app.controllers')
           direction: 'left',
           //true or false - should the marquee be duplicated to show an effect of continues flow
           duplicated: true
-        });
+        });**/
+
+      $scope.tip=localStorage.tip;
 
     };
 
@@ -104,8 +112,8 @@ angular.module('app.controllers')
             delete $scope.playlist[$scope.callingindex];
 
             $scope.callingindex++;
-            $ionicLoading.hide();
-            $interval.cancel($scope.timer);
+            //$ionicLoading.hide();
+            //$interval.cancel($scope.timer);
             $scope.makevoiceanddisplay();
           } else {
             //tipvoice.removeEventListener('ended',voiceEnd,false);
@@ -129,9 +137,15 @@ angular.module('app.controllers')
         showBackdrop: false
 
       });
-      $timeout(function () {
+      /*$timeout(function () {
         $('#showmsg').animate({fontSize:'7em'},'slow');
-      }, 100);
+      }, 100);*/
+
+      $timeout(function () {
+        $('#showmsg').animate({fontSize:'7em'},'slow').parent().fadeIn(1500).fadeOut(1500).fadeIn(1500).fadeOut(1500).fadeIn(1500).fadeOut(1000,function(){
+          $ionicLoading.hide();
+        });
+      }, 10);
 
     };
     $scope.makevoiceanddisplay = function () {
@@ -145,13 +159,15 @@ angular.module('app.controllers')
         //console.log(text);
 
         $scope.showcallmsg(item);
+
+        /**
         $scope.timer = $interval(function () {
           $ionicLoading.hide();
 
           $timeout(function () {
             $scope.showcallmsg(item);
           }, 500);
-        }, 3500)
+        }, 3500)**/
 
         $scope.playvoice(text);
 
@@ -189,9 +205,9 @@ angular.module('app.controllers')
       for (var i = 0; i < $scope['data'+data.room].length; i++) {
         if ($scope['data'+data.room][i].lineno == data.lineno) {
 
-          //$timeout(function () {
+          $timeout(function () {
             $scope['data'+data.room].splice(i, 1);
-          //}, 0);
+          }, 0);
           break;
         }
       }
